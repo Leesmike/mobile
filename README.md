@@ -5,3 +5,4 @@
 - [XLSX файл](https://github.com/Leesmike/mobile/blob/main/Mikhail%20Li%20-%20Bug%20reports%20of%20shopping-list%20mobile%20app.xlsx) с отчётами о дефектах мобильного приложения shopping-list
 - [PDF файл](https://github.com/Leesmike/mobile/blob/main/Mikhail%20Li%20-%20shopping-list%20test%20run.pdf) с тестовым прогоном тест-кейсов для мобильного приложения shopping-list
 - [PDF файл](https://github.com/Leesmike/mobile/blob/main/Test%20summary%20report%20of%20shopping-list%201.0%20app%2007.02.25.pdf) с отчётом по результатам тестирования мобильного приложения shopping-list
+- [Видео](https://drive.google.com/file/d/1YJvx-7levBZWJ6UDAQy4yhYwV1ZpY_52/view?usp=sharing) использования charles proxy для перехвата и изменения мобильного трафика
