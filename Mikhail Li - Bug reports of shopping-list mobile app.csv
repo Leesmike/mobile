@@ -1,0 +1,339 @@
+﻿"Issue Id","Project","Tags","Summary","Reporter","Created","Updated","Resolved","Priority","Type","State","Assignee","Sprints","Story points","App","Module","Description","Votes"
+"G9-1256","Group 9","","Редактирование задачи: самопроизвольное выставление чекбокса выполнения задачи под экранной клавиатурой","esparmansion","5 Feb 2025 19:04","5 Feb 2025 20:20",,"High","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### **Preconditions:**
+
+Приложение shopping-list установлено. В список задач [добавлено минимум семь задач](https://app.qase.io/case/G9-2151). Четвёртая и пятая задачи без чекбокса выполнения
+
+### **Steps to reproduce**
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Установить чекбокс выполнения напротив четвёртой задачи
+* *Step 3*
+  Action: Долгим нажатием вызвать окно редактирования четвёртой задачи
+* *Step 4*
+  Action: Изменить название задачи
+* *Step 5*
+  Action: Нажать кнопку ""Сохранить""
+
+### **Actual result:**
+
+Чекбокс пятой задачи самопроизвольно меняет своё состояние с пустого на проставленный
+
+
+
+![](G9-1256 example.mkv){width=70%}
+
+
+
+[Ссылка на видео воспроизведения](https://drive.google.com/file/d/18hu9w_a43L36JnUPkaJ00mLOFWo2CP8O/view?usp=sharing) со списком из 10 задач
+
+
+
+**Expected Result:**
+
+Чекбокс пятой задачи не меняет самопроизвольно своё состояние, оставаясь пустым
+
+
+
+Дефект найден в ходе выполнения [проверок чек-листа](https://docs.google.com/spreadsheets/d/12HrUvbgzV6_NjIddUdzh-wGPqpK3PhUJS6p_0dBtzng/edit?usp=sharing)","0"
+"G9-1252","Group 9","","Удаление задачи: вылет приложения при многократном нажатии кнопки ""Удалить""","esparmansion","5 Feb 2025 18:17","5 Feb 2025 18:48",,"High","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### **Preconditions:**
+
+Приложение shopping-list установлено. В список задач [добавлена минимум одна задача](https://app.qase.io/case/G9-2151)
+
+### **Steps to reproduce**
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Выбрать задачу в списке и нажать многократно кнопку ""Удалить"" (""Delete"") рядом с задачей
+
+### **Actual result:**
+
+Возникновение критической ошибки и вылет приложения
+
+Лог: G9-1252[ critical error log shopping-list.txt](G9-1252 critical error log shopping-list.txt)
+
+
+
+![](G9-1252.mkv){width=70%}
+
+![](G9-1252 with log.mkv){width=70%}
+
+
+
+**Expected Result:**
+
+Удаление задачи, дополнительные нажатия игнорируются. Ошибки не возникает
+
+
+
+
+Дефект найден в ходе выполнения [проверок чек-листа](https://docs.google.com/spreadsheets/d/12HrUvbgzV6_NjIddUdzh-wGPqpK3PhUJS6p_0dBtzng/edit?usp=sharing)","0"
+"G9-1243","Group 9","","Удаление задачи: отображение названия кнопки ""Delete"" вместо ""Удалить""","root","5 Feb 2025 15:46","5 Feb 2025 18:31",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено. В список задач [добавлена минимум одна задача](https://app.qase.io/case/G9-2151)
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Выбрать задачу в списке и нажать кнопку ""Удалить"" рядом с задачей
+
+### Actual result:
+
+Кнопка ""Удалить"" отображается как ""Delete""
+
+![](G9-1243.png)
+
+**Expected Result:**
+
+Кнопка отображается правильно: ""Удалить""
+
+
+
+Qase.io defect: [Удаление задачи из списка задач](https://app.qase.io/defect/G9/view/923)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
+"G9-1251","Group 9","","Добавление задачи: обрезанный текст уведомления при длине названия 26+ символов","esparmansion","5 Feb 2025 17:58","5 Feb 2025 18:16",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### **Preconditions:**
+
+Приложение shopping-list установлено
+
+### **Steps to reproduce**
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Ввести в поле название задачи, содержащее 26 букв кириллицей (например: ""оченьдлинноеназваниезадачи"")
+* *Step 3*
+  Action: Нажать кнопку ""Добавить задачу""
+
+### **Actual result:**
+
+Вывод уведомления: ""Задача не должна превышать 25 символ..."". Воспроизводится при любой ориентации экрана: как портретной, так и альбомной.
+
+![](G9-1251 portrait.png)
+
+
+
+![](G9-1251 album.png){width=70%}
+
+
+
+**Expected Result**:
+
+Вывод уведомления: ""Задача не должна превышать 25 символов""
+
+
+
+Дефект найден в ходе выполнения [проверок чек-листа](https://docs.google.com/spreadsheets/d/12HrUvbgzV6_NjIddUdzh-wGPqpK3PhUJS6p_0dBtzng/edit?usp=sharing)","0"
+"G9-1248","Group 9","","Редактирование задачи: закрытие окна редактирования при смене ориентации экрана","root","5 Feb 2025 17:09","5 Feb 2025 17:46",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено. В список задач [добавлена минимум одна задача](https://app.qase.io/case/G9-2151)
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Долгим нажатием на задачу вызвать окно редактирования
+* *Step 3*
+  Action: Изменить название задачи, используя [корректные данные](https://artsiomrusau.youtrack.cloud/issue/G9-6/Validaciya-zadachi-Task-Validation) (кириллица, 1–25 символов)
+* *Step 4*
+  Action: Поменять ориентацию экрана, повернув устройство
+
+### Actual result:
+
+Окно редактирования сбрасывается при смене ориентации экрана (портретная → альбомная и наоборот). Воспроизводится с автоматическим изменением ориентации экрана и с изменением ориентации по нажатию кнопки в панели навигации.
+
+![](G9-1248 auto.mkv){width=70%}
+
+![](G9-1248 manual.mkv){width=70%}
+
+**Expected Result:**
+
+Окно редактирования остаётся открытым при смене ориентации экрана. Введённые в него данные сохраняются при смене ориентации экрана.
+
+
+
+Qase.io defect: [Сохранение окна редактирования задачи при смене ориентации экрана](https://app.qase.io/defect/G9/view/926)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
+"G9-1245","Group 9","","Редактирование задачи: отсутствие валидации длины названия","root","5 Feb 2025 16:41","5 Feb 2025 17:02",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено. В список задач [добавлена минимум одна задача](https://app.qase.io/case/G9-2151)
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Долгим нажатием на задачу вызвать окно редактирования
+* *Step 3*
+  Action: Изменить название задачи, используя слово кириллицей длиной 26 букв. Например: ""оченьдлинноеназваниезадачи""
+* *Step 4*
+  Action: Нажать кнопку ""Сохранить""
+
+### Actual result:
+
+Изменения сохраняются. Отсутствие валидации длины названия у редактируемой задачи
+
+![](G9-1245.mkv){width=70%}
+
+
+
+**Expected Result:**
+
+Изменения не сохраняются. Вывод уведомления: ""Задача не должна превышать 25 символов""
+
+
+
+Qase.io defect: [Редактирование задачи с новым названием длиной 26 букв](https://app.qase.io/defect/G9/view/925)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
+"G9-1244","Group 9","","Редактирование задачи: отсутствие валидации введенных данных","root","5 Feb 2025 16:04","5 Feb 2025 16:38",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено. В список задач [добавлена минимум одна задача](https://app.qase.io/case/G9-2151)
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Долгим нажатием на задачу вызвать окно редактирования
+* *Step 3*
+  Action: Изменить название задачи, используя латиницу. Например, ""яблоко"" → ""apple""
+* *Step 4*
+  Action: Нажать кнопку ""Сохранить""
+
+### Actual result:
+
+Изменения сохраняются. Отсутствует валидация введённых данных. Воспроизводится с латиницей, цифрами, спец. символами, эмодзи.
+
+![](G9-1244 english.mkv){width=70%}
+
+![](G9-1244 numbers.mkv){width=70%}
+
+![](G9-1244 misc.mkv){width=70%}
+
+
+
+**Expected Result:**
+
+Изменения не сохраняются. Вывод уведомления: ""Задача должна быть на русском языке""
+
+
+
+Qase.io defect: [Редактирование задачи с использованием латиницы](https://app.qase.io/defect/G9/view/924)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
+"G9-1242","Group 9","","Сохранение задач: сохранение в списке 11-ти задач вместо 10-ти","root","5 Feb 2025 15:26","5 Feb 2025 15:42",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено. В список [добавлено 10 задач](https://app.qase.io/case/G9-2151)
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Ввести в поле название задачи, [удовлетворяющее требованиям](https://artsiomrusau.youtrack.cloud/issue/G9-6/Validaciya-zadachi-Task-Validation) (кириллица, от 1 до 25 символов)
+* *Step 3*
+  Action: Нажать кнопку ""Добавить задачу""
+
+  
+
+### Actual result:
+
+Задача добавлена. Максимальное количество задач равно 11-ти вместо 10-ти
+
+![](G9-1242.mkv){width=70%}
+
+
+
+**Expected Result:**
+
+Задача не добавлена. Вывод уведомления: ""Нельзя создать больше 10 задач""
+
+
+
+Qase.io defect: [Добавление 11-ой задачи в список задач](https://app.qase.io/defect/G9/view/922)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
+"G9-1237","Group 9","","Добавление задачи: максимальная длина названия 24 символа вместо 25","root","5 Feb 2025 14:37","5 Feb 2025 15:36",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Ввести в поле название задачи на кириллице длиной 25 букв
+* *Step 3*
+  Action: Нажать кнопку ""Добавить задачу""
+
+### Actual result:
+
+Вывод уведомления: ""Задача не должна превышать 25 символов""
+
+
+
+![](G9-1237.png)
+
+![](G9-1237 extra.png)
+
+
+
+**Expected Result:**
+
+Задача успешно добавлена, нет сообщений об ошибке
+
+
+
+Qase.io defect: [Добавление задачи с названием кириллицей длиной 25 букв](https://app.qase.io/defect/G9/view/919)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
+"G9-1231","Group 9","","Добавление задачи: отсутствие валидации буквы ""ё"" в названии задачи","root","5 Feb 2025 13:53","5 Feb 2025 14:32",,"Medium","Bug","New","Unassigned","Unscheduled",,"Mobile","Tasks","**Environment:** Xiaomi Redmi Note 9, MIUI 13.0.3 Global Stable, Android 12 SP1A.210812.016
+
+### Preconditions:
+
+Приложение shopping-list установлено
+
+### Steps to reproduce
+
+* *Step 1*
+  Action: Запустить shopping-list нажатием по иконке приложения на главном экране или в списке приложений
+* *Step 2*
+  Action: Ввести в поле название задачи, содержащее букву ""ё"" (например, ""ёжик"")
+* *Step 3*
+  Action: Нажать кнопку ""Добавить задачу""
+
+### Actual result:
+
+Вывод уведомления: ""Задача должна быть на русском языке""
+
+![](G9-1231.mkv){width=70%}
+
+
+
+**Expected Result**:
+
+Задача успешно добавлена, нет сообщений об ошибке
+
+
+
+Qase.io defect: [Добавление задачи с буквой Ё в названии](https://app.qase.io/defect/G9/view/913)
+Found in test run: [Express run 2025/02/05](https://app.qase.io/run/G9/dashboard/193)","0"
